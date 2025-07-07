@@ -1,0 +1,10 @@
+{
+  "calibrated": true,
+  "compensation_vector": [
+    -343.0,
+    11.0
+  ],
+  "scale_factor": 1.0,
+  "camera_index": 1,
+  "timestamp": "2025-07-06 00:59:34"
+}
