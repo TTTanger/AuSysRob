@@ -94,6 +94,73 @@ python LegoGraspingSystem.py
 - **Error Testing:**  
   Tools for testing and recording the robot's actual vs. target positions to build an error compensation database.
 
+## Error Compensation Testing Module (CorrectionTool.py)
+
+The `CorrectionTool.py` module provides comprehensive tools for testing and improving the accuracy of the robotic arm through error compensation techniques.
+
+### Features
+
+- **Manual Error Testing:** Input target positions manually and record actual robot positions to build error data
+- **Camera-Based Error Testing:** Use camera detection to automatically test positioning accuracy
+- **Automated Error Testing:** Fully automated testing using red tape markers on the robot arm
+- **Error Database Management:** Collect, store, and analyze error data for compensation algorithms
+- **Compensation Effect Testing:** Compare traditional vs. data-driven compensation methods
+
+### Usage
+
+Run the error compensation testing module:
+
+```bash
+python CorrectionTool.py
+```
+
+### Testing Modes
+
+#### 1. Manual Error Test
+- Input target coordinates manually
+- Move robot arm to target position
+- Measure and record actual position reached
+- Calculate and store error data
+
+#### 2. Camera-Based Error Test
+- Requires completed hand-eye calibration
+- Detect red Lego bricks automatically
+- Move robot arm to detected position
+- Measure actual position manually
+- Store error data for compensation
+
+#### 3. Automated Error Test
+- Requires red tape marker on robot arm
+- Fully automated detection and measurement
+- Uses camera to detect both Lego brick and robot arm tape
+- Calculates errors automatically without manual measurement
+
+### Error Database
+
+The module maintains an `error_database.json` file containing:
+- Target vs. actual position pairs
+- Statistical analysis of errors
+- Compensation algorithm parameters
+- Historical accuracy improvements
+
+### Interactive Menu Options
+
+1. **Manual Error Entry:** For precise manual testing
+2. **Camera Error Test:** Semi-automated testing with camera
+3. **Automated Error Test:** Fully automated testing process
+4. **Test Compensation Effect:** Compare compensation methods
+5. **View Error Database:** Display current error data
+6. **Save Database:** Persist error data to file
+7. **Load Database:** Load existing error data
+8. **Exit:** Return to main system
+
+### Prerequisites
+
+- Completed hand-eye calibration
+- Red Lego bricks for testing
+- Red tape marker on robot arm (for automated testing)
+- Proper camera positioning and lighting
+
 ## Customization
 
 - Modify color detection parameters in `LegoGraspingSystem.py` for different brick colors.
