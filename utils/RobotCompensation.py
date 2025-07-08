@@ -22,6 +22,7 @@ JOINT4_OFFSET = 0.0
 JOINT5_OFFSET = 0.0
 
 # ==================== 系统配置参数 ====================
+SCALE_FACTOR = 1.0
 # 夹持器参数
 GRIP_HEIGHT = 25.0  # 夹持高度 (mm)
 GRIPPER_OPEN_ANGLE = 0  # 夹持器开启角度
@@ -29,13 +30,13 @@ GRIPPER_CLOSE_ANGLE = 90  # 夹持器闭合角度
 GRIPPER_GRAB_ANGLE = 30  # 夹持器抓取角度
 
 # 移动参数
-MOVE_TIME = 200  # 移动时间 (ms)
+MOVE_TIME = 300  # 移动时间 (ms)
 
 # 摄像头参数
-CAMERA_INDEX = 1  # 摄像头索引
+CAMERA_INDEX = 0  # 摄像头索引
 
 # 高度参数
-SAFE_HEIGHT = 100.0  # 安全高度 (mm)
+SAFE_HEIGHT = 4000.0  # 安全高度 (mm)
 WORKTABLE_HEIGHT = 0.0  # 工作台高度 (mm)
 
 # 调试参数
@@ -45,7 +46,7 @@ SAVE_DETECTION_IMAGES = False  # 保存检测图像
 IMAGE_SAVE_PATH = "detection_images"  # 图像保存路径
 
 # 串口参数
-SERIAL_PORT = 'COM5'  # 串口号
+SERIAL_PORT = 'COM8'  # 串口号
 BAUD_RATE = 115200  # 波特率
 TIMEOUT = 5  # 超时时间
 

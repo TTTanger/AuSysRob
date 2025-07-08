@@ -154,7 +154,7 @@ class LegoGraspingSystem:
         
         # Find contours
         contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        
+        area = 0
         if contours:
             # Find the largest contour (assuming it is a Lego brick)
             largest_contour = max(contours, key=cv2.contourArea)
@@ -272,7 +272,7 @@ class LegoGraspingSystem:
 
         if not (r_min <= r <= r_max) or not (z_min <= z <= z_max):
             print(f"⚠️ Position {position} exceeds the robot arm's working circle range")
-            print(f"    Suggested range: r: [{r_min}, {r_max}], Z: [{z_min}, {z_max}]")
+            print(f"Suggested range: r: [{r_min}, {r_max}], Z: [{z_min}, {z_max}]")
             return False
         
         else :

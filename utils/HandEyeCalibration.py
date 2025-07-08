@@ -221,9 +221,10 @@ class HandEyeCalibration:
                 physical_coord[1] - pixel_coord[1]
             )   
             
+            from utils.RobotCompensation import SCALE_FACTOR
             # 计算缩放因子（可选，用于更精确的转换）
             # 这里假设像素和物理坐标的比例关系
-            self.scale_factor = (390 / 680)  # 可以根据实际情况调整
+            self.scale_factor = SCALE_FACTOR
             
             self.calibrated = True
             print(f"✅ Calibration completed!")
