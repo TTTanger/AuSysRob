@@ -227,7 +227,7 @@ class ErrorCompensationTester:
         # Convert to HSV color space
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
         
-        # 定义红色范围（HSV）
+        # Define the range of red tape
         lower_red1 = np.array([0, 100, 100])
         upper_red1 = np.array([10, 255, 255])
         lower_red2 = np.array([160, 100, 100])

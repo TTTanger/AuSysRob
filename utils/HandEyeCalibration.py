@@ -223,7 +223,7 @@ class HandEyeCalibration:
             
             # 计算缩放因子（可选，用于更精确的转换）
             # 这里假设像素和物理坐标的比例关系
-            self.scale_factor = 1.0  # 可以根据实际情况调整
+            self.scale_factor = (390 / 680)  # 可以根据实际情况调整
             
             self.calibrated = True
             print(f"✅ Calibration completed!")
@@ -249,8 +249,8 @@ class HandEyeCalibration:
         if not self.calibrated:
             raise ValueError("❌ Calibration not completed, please call calibrate() first")
         
-        physical_x = pixel_coord[0] + self.compensation_vector[0]
-        physical_y = pixel_coord[1] + self.compensation_vector[1]
+        physical_x = (pixel_coord[0] + self.compensation_vector[0]) * self.scale_factor
+        physical_y = (pixel_coord[1] + self.compensation_vector[1]) * self.scale_factor
         
         return (-physical_x, physical_y)
     
