@@ -160,25 +160,25 @@ class LegoGraspingSystem:
             largest_contour = max(contours, key=cv2.contourArea)
             area = cv2.contourArea(largest_contour)
             
-                    # Area threshold, filter out too small areas
-        if area > 500:  # Can be adjusted according to actual situation
-            # Calculate the center point of the contour
-            M = cv2.moments(largest_contour)
-            if M["m00"] != 0:
-                cx = int(M["m10"] / M["m00"])
-                cy = int(M["m01"] / M["m00"])
-                
-                # New: Calculate the angle of the Lego brick
-                rect = cv2.minAreaRect(largest_contour)
-                angle = rect[2]  # Get the angle
-                
-                # Angle normalization: ensure the angle is between -90 and 90 degrees
-                if angle < -45:
-                    angle += 90
-                elif angle > 45:
-                    angle -= 90
-                
-                return (cx, cy, angle)
+            # Area threshold, filter out too small areas
+            if area > 500:  # Can be adjusted according to actual situation
+                # Calculate the center point of the contour
+                M = cv2.moments(largest_contour)
+                if M["m00"] != 0:
+                    cx = int(M["m10"] / M["m00"])
+                    cy = int(M["m01"] / M["m00"])
+                    
+                    # New: Calculate the angle of the Lego brick
+                    rect = cv2.minAreaRect(largest_contour)
+                    angle = rect[2]  # Get the angle
+                    
+                    # Angle normalization: ensure the angle is between -90 and 90 degrees
+                    if angle < -45:
+                        angle += 90
+                    elif angle > 45:
+                        angle -= 90
+                    
+                    return (cx, cy, angle)
         
         return None
     
